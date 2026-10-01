@@ -41,4 +41,5 @@ Navbar, collapse, container, grid system (`col-sm`, `col-md`, `col-lg`), carouse
 
 ## Author
 
-Your Name
+Muhammad Husnain Raheem
+
