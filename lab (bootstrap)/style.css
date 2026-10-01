@@ -1,0 +1,294 @@
+/* =====================================================
+                    GENERAL
+===================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #212529;
+}
+
+
+/* =====================================================
+                    NAVBAR
+===================================================== */
+
+.navbar {
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+.navbar .nav-link {
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffc107;
+}
+
+/* Collapsed menu on mobile */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        padding-top: 10px;
+        margin-top: 10px;
+        border-top: 1px solid #343a40;
+    }
+}
+
+
+/* =====================================================
+                    HERO SLIDER
+===================================================== */
+
+.carousel-item {
+    height: 100vh;
+    min-height: 600px;
+}
+
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(45%);
+}
+
+.hero-caption {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero-caption h1 {
+    line-height: 1.2;
+}
+
+.hero-caption p {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+
+/* =====================================================
+                    SECTIONS
+===================================================== */
+
+section {
+    scroll-margin-top: 70px;
+}
+
+.section-description {
+    max-width: 650px;
+}
+
+
+/* =====================================================
+                    SERVICES
+===================================================== */
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.icon-box {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff3cd;
+    color: #ffc107;
+
+    border-radius: 15px;
+
+    font-size: 30px;
+}
+
+
+/* =====================================================
+                    FEATURES
+===================================================== */
+
+.feature-item {
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+    border-color: #ffc107 !important;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .08);
+}
+
+.feature-item > i {
+    font-size: 40px;
+    color: #ffc107;
+}
+
+
+/* =====================================================
+                    CTA
+===================================================== */
+
+.cta-section {
+    background-color: #212529;
+}
+
+
+/* =====================================================
+                    CONTACT
+===================================================== */
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff3cd;
+    color: #ffc107;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+.form-control {
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.15);
+}
+
+
+/* =====================================================
+                    FOOTER
+===================================================== */
+
+.footer {
+    background-color: #17191c !important;
+}
+
+.footer-logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffc107;
+    padding-left: 5px;
+}
+
+/* Social Media */
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #343a40;
+    color: white;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* Footer Bottom */
+
+.footer-bottom-link {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-bottom-link:hover {
+    color: #ffc107;
+}
+
+
+/* =====================================================
+                    RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .carousel-item {
+        min-height: 600px;
+    }
+
+    .hero-caption h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero-caption p {
+        font-size: 1rem;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .carousel-item {
+        min-height: 650px;
+    }
+
+    .hero-caption h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero-caption p {
+        font-size: 0.95rem;
+    }
+
+    .hero-caption .btn {
+        width: 100%;
+    }
+
+    .feature-item > i {
+        font-size: 32px;
+    }
+
+}

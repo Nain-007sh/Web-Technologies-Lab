@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Practice Lab</title>
+    <link rel="stylesheet" href="/CSS Practice Lab/style.css">
+</head>
+
+<body>
+
+    <header class="banner">
+        <h1>CSS Practice Lab</h1>
+        <p class="tagline">Flexbox &bull; Positioning &bull; Selectors</p>
+        <nav class="topnav">
+            <a href="#flexbox">Flexbox</a>
+            <a href="#positioning">Positioning</a>
+            <a href="#selectors">Selectors</a>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <p class="legend">
+            <b>How to read:</b> each card has the <b>CSS code</b>, a one-line <b>explanation</b>, and a <b>live demo</b>.
+            Dashed border = container, coloured boxes = items (1st teal, 2nd orange, 3rd purple).
+        </p>
+
+        <!-- ================= FLEXBOX ================= -->
+        <article class="topic" id="flexbox">
+            <h2>Part 1: Flexbox</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>Flex Container &amp; Items</h3>
+                    <p class="explain">display: flex makes the parent a container; its direct children become flex items in one row.</p>
+                    <pre class="code">.box { display: flex; }</pre>
+                    <div class="demo">
+                        <div class="fx labeled" data-label="flex container">
+                            <div>Item 1</div><div>Item 2</div><div>Item 3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Main Axis &amp; Cross Axis</h3>
+                    <p class="explain">Main axis follows flex-direction (row = left to right). Cross axis is perpendicular to it.</p>
+                    <pre class="code">flex-direction: row;
+align-items: center;</pre>
+                    <div class="demo">
+                        <div class="axis-wrap">
+                            <div class="fx tall a-center">
+                                <div>1</div><div>2</div><div>3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card wide">
+                <h3>Flex Direction</h3>
+                <p class="explain">Decides which way items are placed. Watch the order of 1, 2, 3 change.</p>
+                <div class="demo variants">
+                    <div><span class="lbl">row</span>
+                        <div class="fx dir-row"><div>1</div><div>2</div><div>3</div></div></div>
+                    <div><span class="lbl">row-reverse</span>
+                        <div class="fx dir-rrev"><div>1</div><div>2</div><div>3</div></div></div>
+                    <div><span class="lbl">column</span>
+                        <div class="fx dir-col"><div>1</div><div>2</div><div>3</div></div></div>
+                    <div><span class="lbl">column-reverse</span>
+                        <div class="fx dir-crev"><div>1</div><div>2</div><div>3</div></div></div>
+                </div>
+            </div>
+
+            <div class="card wide">
+                <h3>Justify Content (main axis alignment)</h3>
+                <p class="explain">Spreads items along the main axis (horizontal here).</p>
+                <div class="demo">
+                    <span class="lbl">flex-start</span>
+                    <div class="fx j-start"><div>1</div><div>2</div><div>3</div></div>
+                    <span class="lbl">center</span>
+                    <div class="fx j-center"><div>1</div><div>2</div><div>3</div></div>
+                    <span class="lbl">flex-end</span>
+                    <div class="fx j-end"><div>1</div><div>2</div><div>3</div></div>
+                    <span class="lbl">space-between</span>
+                    <div class="fx j-between"><div>1</div><div>2</div><div>3</div></div>
+                    <span class="lbl">space-around</span>
+                    <div class="fx j-around"><div>1</div><div>2</div><div>3</div></div>
+                    <span class="lbl">space-evenly</span>
+                    <div class="fx j-evenly"><div>1</div><div>2</div><div>3</div></div>
+                </div>
+            </div>
+
+            <div class="card wide">
+                <h3>Align Items (cross axis alignment)</h3>
+                <p class="explain">Aligns items vertically inside a container with fixed height.</p>
+                <div class="demo variants four">
+                    <div><span class="lbl">flex-start</span>
+                        <div class="fx tall a-start"><div>1</div><div>2</div><div>3</div></div></div>
+                    <div><span class="lbl">center</span>
+                        <div class="fx tall a-center"><div>1</div><div>2</div><div>3</div></div></div>
+                    <div><span class="lbl">flex-end</span>
+                        <div class="fx tall a-end"><div>1</div><div>2</div><div>3</div></div></div>
+                    <div><span class="lbl">stretch</span>
+                        <div class="fx tall a-stretch"><div>1</div><div>2</div><div>3</div></div></div>
+                </div>
+            </div>
+
+            <div class="card wide">
+                <h3>Flex Wrap</h3>
+                <p class="explain">nowrap forces everything on one line (overflows). wrap moves extra items to the next line.</p>
+                <pre class="code">flex-wrap: nowrap;   |   flex-wrap: wrap;</pre>
+                <div class="demo variants">
+                    <div><span class="lbl">nowrap (items overflow)</span>
+                        <div class="fx fixed-w w-no"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div></div></div>
+                    <div><span class="lbl">wrap</span>
+                        <div class="fx fixed-w w-yes"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div></div></div>
+                </div>
+            </div>
+
+            <div class="card wide">
+                <h3>Gap</h3>
+                <p class="explain">Adds space between items without using margins.</p>
+                <div class="demo variants">
+                    <div><span class="lbl">no gap</span>
+                        <div class="fx gap-0"><div>1</div><div>2</div><div>3</div></div></div>
+                    <div><span class="lbl">gap: 25px</span>
+                        <div class="fx gap-25"><div>1</div><div>2</div><div>3</div></div></div>
+                </div>
+            </div>
+
+            <div class="card wide">
+                <h3>Flex Grow</h3>
+                <p class="explain">Extra free space is shared between items according to their flex-grow number.</p>
+                <div class="demo">
+                    <span class="lbl">all flex-grow: 0 (no growing)</span>
+                    <div class="fx grow-0"><div>0</div><div>0</div><div>0</div></div>
+                    <span class="lbl">all flex-grow: 1 (equal share)</span>
+                    <div class="fx grow-eq"><div>1</div><div>1</div><div>1</div></div>
+                    <span class="lbl">1 : 3 : 1 (middle takes 3 parts)</span>
+                    <div class="fx grow-ratio"><div>1</div><div>3</div><div>1</div></div>
+                </div>
+            </div>
+
+            <div class="card wide">
+                <h3>Flex Shrink</h3>
+                <p class="explain">Each item is 200px wide but the container is only 400px. Higher flex-shrink = shrinks more.</p>
+                <div class="demo">
+                    <span class="lbl">all flex-shrink: 1 (shrink equally)</span>
+                    <div class="fx shrink-box s-eq"><div>shrink 1</div><div>shrink 1</div><div>shrink 1</div></div>
+                    <span class="lbl">shrink 1 : 2 : 4</span>
+                    <div class="fx shrink-box s-diff"><div>shrink 1</div><div>shrink 2</div><div>shrink 4</div></div>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- ================= POSITIONING ================= -->
+        <article class="topic" id="positioning">
+            <h2>Part 2: CSS Positioning</h2>
+            <p class="explain">The dashed grey box is the item's <b>normal place</b>. See where each position type puts the box.</p>
+
+            <div class="card wide">
+                <h3>Static (default)</h3>
+                <p class="explain">Normal flow. top/left/right/bottom have no effect.</p>
+                <pre class="code">position: static;</pre>
+                <div class="slot"><div class="pos-box pos-static">Static Box</div></div>
+            </div>
+
+            <div class="card wide">
+                <h3>Relative</h3>
+                <p class="explain">Moves the box away from its normal place (dashed), but the space stays reserved.</p>
+                <pre class="code">position: relative; top: 10px; left: 60px;</pre>
+                <div class="slot"><div class="pos-box pos-relative">Relative Box</div></div>
+            </div>
+
+            <div class="card wide">
+                <h3>Absolute</h3>
+                <p class="explain">Removed from the flow and placed relative to the nearest positioned parent (the grey area).</p>
+                <pre class="code">.parent { position: relative; }
+.box { position: absolute; bottom: 15px; right: 25px; }</pre>
+                <div class="abs-wrapper">
+                    <div class="pos-box pos-absolute">Absolute Box</div>
+                </div>
+            </div>
+
+            <div class="card wide">
+                <h3>Fixed</h3>
+                <p class="explain">Stays glued to the screen. Look at the orange <b>Fixed</b> button at the bottom-left, and scroll.</p>
+                <pre class="code">position: fixed; left: 20px; bottom: 20px;</pre>
+            </div>
+
+            <div class="card wide tall-card">
+                <h3>Sticky</h3>
+                <p class="explain">Scrolls normally, then sticks to the top of the screen while its parent card is visible.</p>
+                <pre class="code">position: sticky; top: 0;</pre>
+                <div class="pos-sticky">Sticky Box (scroll down!)</div>
+                <p class="scroll-text">
+                    Keep scrolling: the green bar stays at the top of the screen until this card ends.
+                    This extra text just makes the card tall enough to see the effect.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- ================= SELECTORS ================= -->
+        <article class="topic" id="selectors">
+            <h2>Part 3: CSS Selectors</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>Universal  *</h3>
+                    <p class="explain">Targets every element on the page.</p>
+                    <pre class="code">* { box-sizing: border-box; }</pre>
+                    <div class="demo"><p>Every element on this page uses border-box sizing.</p></div>
+                </div>
+
+                <div class="card">
+                    <h3>Element  p</h3>
+                    <p class="explain">Targets all tags of that name.</p>
+                    <pre class="code">p { line-height: 1.6; }</pre>
+                    <div class="demo"><p>All paragraphs get this line height.</p></div>
+                </div>
+
+                <div class="card">
+                    <h3>Class  .note</h3>
+                    <p class="explain">Targets elements having that class. Reusable.</p>
+                    <pre class="code">.note { background: yellow; }</pre>
+                    <div class="demo"><p class="note">This paragraph has class="note".</p></div>
+                </div>
+
+                <div class="card">
+                    <h3>ID  #special</h3>
+                    <p class="explain">Targets one unique element.</p>
+                    <pre class="code">#special { color: red; }</pre>
+                    <div class="demo"><p id="special">This paragraph has id="special".</p></div>
+                </div>
+
+                <div class="card">
+                    <h3>Attribute  [type]</h3>
+                    <p class="explain">Targets elements by attribute value.</p>
+                    <pre class="code">input[type="text"] { ... }
+input[type="email"] { ... }</pre>
+                    <div class="demo">
+                        <input type="text" placeholder="Text input (teal border)">
+                        <input type="email" placeholder="Email input (orange border)">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Descendant  (space)</h3>
+                    <p class="explain">Targets ALL matching elements inside, however deep.</p>
+                    <pre class="code">.outer-box p { ... }</pre>
+                    <div class="demo">
+                        <div class="outer-box">
+                            <p>Child paragraph</p>
+                            <div><p>Nested paragraph</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Child  &gt;</h3>
+                    <p class="explain">Targets only DIRECT children, not nested ones.</p>
+                    <pre class="code">.kids-box &gt; p { ... }</pre>
+                    <div class="demo">
+                        <div class="kids-box">
+                            <p>Direct child</p>
+                            <div><p>Nested (not styled)</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Adjacent Sibling  +</h3>
+                    <p class="explain">Targets only the element right after another.</p>
+                    <pre class="code">p:first-child + p { ... }</pre>
+                    <div class="demo">
+                        <div class="adj-box">
+                            <p>Paragraph one</p>
+                            <p>Paragraph two</p>
+                            <p>Paragraph three</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>General Sibling  ~</h3>
+                    <p class="explain">Targets ALL matching siblings that come after.</p>
+                    <pre class="code">p:first-child ~ p { ... }</pre>
+                    <div class="demo">
+                        <div class="gen-box">
+                            <p>Paragraph one</p>
+                            <p>Paragraph two</p>
+                            <p>Paragraph three</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Pseudo-class  :hover</h3>
+                    <p class="explain">Styles an element in a special state.</p>
+                    <pre class="code">.magic-btn:hover { ... }</pre>
+                    <div class="demo"><button class="magic-btn">Hover Me</button></div>
+                </div>
+
+                <div class="card">
+                    <h3>Pseudo-element  ::before / ::after</h3>
+                    <p class="explain">Adds generated content before or after an element.</p>
+                    <pre class="code">.decorated::before { content: "» "; }
+.decorated::after { content: " «"; }</pre>
+                    <div class="demo"><p class="decorated">Text with generated content</p></div>
+                </div>
+
+            </div>
+        </article>
+
+    </main>
+
+    <div class="fixed-badge">Fixed</div>
+
+    <footer class="site-footer">
+        <p>CSS Practice Lab</p>
+        <p>Made with HTML &amp; CSS</p>
+    </footer>
+
+</body>
+
+</html>
